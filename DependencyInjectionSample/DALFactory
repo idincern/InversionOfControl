@@ -1,0 +1,9 @@
+using System;
+
+public static class DALFactory
+{
+    public static IDAL CreateDAL()
+    {
+        return new DAL();
+    }
+}

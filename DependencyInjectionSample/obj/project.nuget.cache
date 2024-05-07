@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Kx+CBqLdCCMk7fpn5XY0a3DllBGB2u/pZxbpIfRFi7wfSYRfe+VzioxWjTGoVwxuSu1iLJ+L7bJ2MW6OqVfHWA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dincer\\Desktop\\InversionOfControl\\DependencyInjectionSample\\DependencyInjectionSample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dincer\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\Dincer\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
