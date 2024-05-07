@@ -17,14 +17,15 @@ namespace DependencyInjectionSample
             var bl = serviceProvider.GetService<BL>();
 
             // Use BL to get products
-            var products = bl.GetProducts();
+            var products = bl?.GetProducts();
 
             // Example usage: Display products
             Console.WriteLine("Products:");
-            foreach (var product in products)
-            {
-                Console.WriteLine($"- {product.Name}: ${product.Price}");
-            }
+            if (products != null)
+                foreach (var product in products)
+                {
+                    Console.WriteLine($"- {product.Name}: ${product.Price}");
+                }
         }
     }
 }
