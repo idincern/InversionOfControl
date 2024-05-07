@@ -8,10 +8,14 @@ namespace DependencyInjectionSample
         static void Main(string[] args)
         {
             // Setup Dependency Injection
-            var serviceProvider = new ServiceCollection()
-                .AddTransient<IDAL, DAL>() // Adds a transient service of the type specified in IDAL with an implementation type specified in DAL to the specified IServiceCollection.
-                .AddTransient<BL>() // Adds a transient service of the type specified in BL to the specified IServiceCollection.
-                .BuildServiceProvider(); // Creates a ServiceProvider containing services from the provided IServiceCollection.
+            // Singleton => Only one instance for the lifetime of the application
+            // Scoped => Only one instance for each request
+            // Transient => New instance each time an object is requested
+            ServiceProvider serviceProvider = new ServiceCollection()
+                .AddTransient<IDAL, DAL>() //  We added a transient service for IDAL implemented by DAL. => if IDAL is implemented via DI, a DAL object is created transient automatically.
+                .AddTransient<BL>() // We added a transient service for BL.
+                .BuildServiceProvider(); // The ServiceCollection is then used to build a ServiceProvider.
+            //The ServiceProvider will now be able to provide instances of IDAL and BL when requested.
 
             // Resolve BL from the DI container
             var bl = serviceProvider.GetService<BL>(); // Get service of type BL from the IServiceProvider.
