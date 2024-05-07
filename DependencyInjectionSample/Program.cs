@@ -9,12 +9,12 @@ namespace DependencyInjectionSample
         {
             // Setup Dependency Injection
             var serviceProvider = new ServiceCollection()
-                .AddTransient<IDAL, DAL>()
-                .AddTransient<BL>()
-                .BuildServiceProvider();
+                .AddTransient<IDAL, DAL>() // Adds a transient service of the type specified in IDAL with an implementation type specified in DAL to the specified IServiceCollection.
+                .AddTransient<BL>() // Adds a transient service of the type specified in BL to the specified IServiceCollection.
+                .BuildServiceProvider(); // Creates a ServiceProvider containing services from the provided IServiceCollection.
 
             // Resolve BL from the DI container
-            var bl = serviceProvider.GetService<BL>();
+            var bl = serviceProvider.GetService<BL>(); // Get service of type BL from the IServiceProvider.
 
             // Use BL to get products
             var products = bl?.GetProducts();
